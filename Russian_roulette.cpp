@@ -11,14 +11,12 @@ bool chamber[6] = {0,0,0,0,0,0};
 int gun(){
     srand(6);
     bulletp = 0 + rand() % 5;
-    cout << bulletp;
     return bulletp;
 }
 
 int chamb(){
     srand(time(0));
     start = 0 + rand() % 5;
-    cout << start;
     return start;
 }
 
