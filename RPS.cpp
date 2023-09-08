@@ -9,17 +9,20 @@ int userC;
 int play;
 
 int comNUM(){
-    srand(time(NULL));
+    srand(time(0));
     int compC = 1 + rand() % 3;
     switch (compC){
         case 1 :
         nameC = 'r';
+        cout << "Computer played ROCK!\n";
             break;
         case 2 :
         nameC = 'p';
+        cout << "Computer played PAPER!\n";
             break;
         case 3 :
             nameC = 's';
+            cout << "Computer played SCISSORS!\n";
             break;
     }
     return nameC;
@@ -42,28 +45,34 @@ int userNUM(){
 
 void winner(){
     if (nameU == 'r' && nameC == 'p'){
-        cout << "You win! Computer played paper.";
+        cout << "You win!\n";
+        userWIN++;
     }
     else if(nameU == 'r' && nameC == 's'){
-        cout << "You lose! Computer played scissors.";
+        cout << "You lose!\n";
+        userLOSS++;
     }
     else if(nameU == 'p' && nameC == 'r'){
-        cout << "You win! Computer played rock.";
+        cout << "You win!\n";
+        userWIN++;
     }
     else if(nameU == 'p' && nameC == 's' ){
-        cout << "You Lose Computer played scissors.";
+        cout << "You Lose!\n";
+        userLOSS++;
     }
     else if(nameU == 's' && nameC == 'p'){
-        cout << "You win! Computer played paper.";
+        cout << "You win!\n";
+        userWIN++;
     }
     else if(nameU == 's' && nameC == 'r'){
-        cout << "You lose! Computer played rock.";
+        cout << "You lose!\n";
+        userLOSS++;
     }
     else{
-        cout << "Tie!";
+        cout << "Tie!\n";
+        userTIED++;
     }
 }
-
 int again(){
     cout << "Would you like to play again?\n";
     cout << "1.Yes\\2.No" << endl;
